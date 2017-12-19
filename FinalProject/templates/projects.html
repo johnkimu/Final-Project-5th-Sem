@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>Projects</h1>
+<table class="table table-striped">
+  <thead>
+    <th>Tittle</th>
+    <th>body</th>
+    <th>Manager</th>
+    <th>Date Created</th>
+    <th></th>
+    <th></th>
+
+  </thead>
+
+  <tbody>
+  {% for project in projects %}
+    <tr>
+      <td>{{ project.tittle }}</td>
+      <td>{{ project.body }}</td>
+      <td>{{ project.manager }}</td>
+      <td>{{ project.date_created }}</td>
+      <td><a href="edit_project/{{project.id}}" class="btn btn-default pull-right">Edit</a></td>
+      <td><a href="#" class="btn btn-danger">Delete</a></td>
+    </tr>
+  {% endfor %}
+ </tbody>
+</table>
+{% endblock %}
