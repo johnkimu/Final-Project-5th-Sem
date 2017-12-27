@@ -55,9 +55,7 @@ def login():
         #Close connection
         cur.close()
     else:
-        error = 'Username not found'
-        return render_template('login.html', error=error)
-    return render_template('login.html')
+        return render_template('login.html')
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
