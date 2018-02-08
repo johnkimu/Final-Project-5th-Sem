@@ -4,6 +4,7 @@ from flask_mysqldb import MySQL
 from sqlalchemy.orm import sessionmaker
 from register_form import RegisterForm
 from project_form import ProjectForm
+from assignproject_form import AssignProject
 from passlib.hash import sha256_crypt
 from functools import wraps
 
@@ -24,6 +25,10 @@ mysql = MySQL(app)
 def home():
     return render_template('home.html')
     return "Hello John!  <a href='/logout'>Logout</a>"
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -137,11 +142,36 @@ def dashboard():
     #Close the connection
     cur.close()
 
+@app.route('/projects')
+def projects():
+#create cursor
+    cur = mysql.connection.cursor()
+    #Get Projects
+    result = cur.execute("SELECT * FROM assignedprojects")
+    projects = cur.fetchall()
+
+    if result > 0:
+        return render_template('projects.html', projects=projects)
+    else:
+        msg = 'No Projects found'
+        return render_template('projects.html', msg=msg)
+    #Close the connection
+    cur.close()
+
+@app.route('/project/<string:id>/')
+def project(id):
+    # create cursor
+    cur = mysql.connection.cursor()
+    # Get Project
+    cur.execute("SELECT * FROM assignedprojects WHERE id = %s", [id])
+    project = cur.fetchone()
+    return render_template('project.html', project=project)
+
 @app.route('/edit_project/<string:id>', methods=['GET', 'POST'])
 def edit_project(id):
     cur = mysql.connection.cursor()
     # Get Project
-    result = cur.execute("SELECT * FROM projects WHERE id = %s", [id])
+    cur.execute("SELECT * FROM projects WHERE id = %s", [id])
     project = cur.fetchone()
 
     form = ProjectForm(request.form)
@@ -150,8 +180,8 @@ def edit_project(id):
     form.body.data = project['body']
 
     if request.method == 'POST' and form.validate():
-        tittle = form.tittle.data
-        body = form.body.data
+        tittle = request.form['tittle']
+        body = request.form['body']
 
         # create a cursor
         cur = mysql.connection.cursor()
@@ -163,6 +193,59 @@ def edit_project(id):
         flash('Project updated', 'success')
         return redirect(url_for('dashboard'))
     return render_template('edit_project.html', form=form)
+
+@app.route('/delete_project/<string:id>', methods=['POST'])
+def delete_project(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM projects WHERE id = %s", [id])
+
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Project deleted', 'success')
+    return redirect(url_for('dashboard'))
+
+@app.route('/assign_project/<string:id>', methods=['GET', 'POST'])
+def assign_project(id):
+    cur = mysql.connection.cursor()
+    # Get Project
+    cur.execute("SELECT * FROM projects WHERE id = %s", [id])
+    project = cur.fetchone()
+
+    form = AssignProject(request.form)
+    # Populate project form fields
+    form.tittle.data=project['tittle']
+    form.body.data = project['body']
+
+    if request.method == 'POST' and form.validate():
+        tittle = request.form['tittle']
+        body = request.form['body']
+        name = request.form['name']
+        email = request.form['email']
+        expected_date = request.form['expected_date']
+
+        # create a cursor
+        cur = mysql.connection.cursor()
+        cur.execute("INSERT INTO assignedprojects(tittle, body, name, email, expected_date, manager) VALUES(%s, %s, %s, %s, %s, %s)",
+                    (tittle, body, name, email, expected_date, session['username']))
+        # commit to db
+        mysql.connection.commit()
+        cur.close()
+
+        flash('Project assigned', 'success')
+        return redirect(url_for('projects'))
+    return render_template('assign_project.html', form=form)
+
+@app.route('/delete_assigndedproject/<string:id>', methods=['POST'])
+def delete_assignedproject(id):
+    cur = mysql.connection.cursor()
+    cur.execute("DELETE FROM assignedprojects WHERE id = %s", [id])
+
+    mysql.connection.commit()
+    cur.close()
+
+    flash('Project deleted', 'success')
+    return redirect(url_for('projects'))
 
 
 

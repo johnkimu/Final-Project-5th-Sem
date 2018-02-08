@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+   <h1>{{project.tittle}}</h1>
+   <div>
+      Created by: {{project.manager}}
+   </div>
+   <div>
+      Assignee: {{project.name}}
+   </div>
+   <div>
+      Date assigned: {{project.assigned_date}}
+   </div>
+   <div>
+      Email: {{project.email}}
+   </div>
+   <div>
+      Date expected {{project.expected_date}}
+   </div>
+<hr>
+<div>
+   <h2>Project Description</h2>
+   {{project.body |safe}}
+</div>
+
+{% endblock %}

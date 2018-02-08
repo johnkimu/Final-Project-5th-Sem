@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Assign Project</h1>
+    {% from "includes/_formhelpers.html" import render_field %}
+      <form method="POST" action="">
+          <div class="form.group">
+           {{ render_field(form.tittle, class_="form-control")}}
+          </div>
+          <div class="form.group">
+           {{ render_field(form.body, class_="form-control")}}
+          </div>
+          <div>
+          <h3>Assign To</h3>
+           <div class="form.group">
+           {{ render_field(form.name, class_="form-control")}}
+          </div>
+          <div class="form.group">
+           {{ render_field(form.email, class_="form-control")}}
+          </div>
+          </div>
+          <div>
+          <h3>Expected Date</h3>
+          {{ form.expected_date(class="dtpick") }}
+          </div>
+          <div>
+               <p><input type="submit" class="btn btn primary" value="Save and Assign" style="margin-top: 20px"></p>
+          </div>
+    </form>
+
+{% endblock %}
