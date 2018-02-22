@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b34c7ae7-9f97-4d69-9b66-7981d9d6227d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/assignproject_form.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/templates/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/templates/assign_project.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/FinalProject/templates/project.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/app.py" afterPath="$PROJECT_DIR$/FinalProject/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/static/style.css" afterPath="$PROJECT_DIR$/FinalProject/static/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/dashboard.html" afterPath="$PROJECT_DIR$/FinalProject/templates/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/edit_project.html" afterPath="$PROJECT_DIR$/FinalProject/templates/edit_project.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/home.html" afterPath="$PROJECT_DIR$/FinalProject/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/includes/_navbar.html" afterPath="$PROJECT_DIR$/FinalProject/templates/includes/_navbar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/layout.html" afterPath="$PROJECT_DIR$/FinalProject/templates/layout.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/login.html" afterPath="$PROJECT_DIR$/FinalProject/templates/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/projects.html" afterPath="$PROJECT_DIR$/FinalProject/templates/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FinalProject/templates/register.html" afterPath="$PROJECT_DIR$/FinalProject/templates/register.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +17,7 @@
         <entry file="file://$PROJECT_DIR$/FinalProject/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="219" column="16" lean-forward="false" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="16" />
+              <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
               <folding>
                 <element signature="e#0#91#0" expanded="true" />
               </folding>
@@ -171,43 +157,24 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Final-Project-5th-Sem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-5th-Sem" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
               <item name="Final-Project-5th-Sem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-5th-Sem" type="462c0819:PsiDirectoryNode" />
-              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-5th-Sem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-5th-Sem" type="462c0819:PsiDirectoryNode" />
-              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-5th-Sem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-5th-Sem" type="462c0819:PsiDirectoryNode" />
-              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final-Project-5th-Sem" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final-Project-5th-Sem" type="462c0819:PsiDirectoryNode" />
-              <item name="FinalProject" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6.2 (C:\Users\John\AppData\Local\Programs\Python\Python36-32\python.exe) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,8 +233,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17776097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18532526" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -699,7 +667,7 @@
     <entry file="file://$PROJECT_DIR$/FinalProject/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="219" column="16" lean-forward="false" selection-start-line="219" selection-start-column="16" selection-end-line="219" selection-end-column="16" />
+          <caret line="23" column="15" lean-forward="false" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
           <folding>
             <element signature="e#0#91#0" expanded="true" />
           </folding>
